@@ -68,11 +68,23 @@ $session = \Stripe\Checkout\Session::create([
 	'cancel_url' => 'http://localhost/projects/agri2/customer/cbuy_crops.php',   // Change File Path
 ]);
 ```
-4. Add API Keys to respective files.
-- News API Key to `fnewsfeed.php`
-- OpenWeatherMap API Key to `fweather_forecast.php`
-- Stripe API Key to `customer/stripePayment/config.php`
-- OpenAI API Key to `index.php` and `fchatgpt.php`
+4. Setup Environment Variables: Create a `.env` file in the root directory and add your API Keys and Database Configuration:
+```env
+# Database Configuration
+DB_SERVER=127.0.0.1
+DB_USERNAME=root
+DB_PASSWORD=
+DB_NAME=agriculture_portal
+
+# API Keys
+NEWS_API_KEY=your_news_api_key_here
+OPENWEATHER_API_KEY=your_openweather_api_key_here
+GEMINI_API_KEY=your_gemini_api_key_here
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Base URL
+BASE_URL=http://localhost/Agriculture-Portal/
+```
 5. Import database from db folder.
 6. Run Apache web server using XAMPP.
 
